@@ -1,0 +1,49 @@
+
+<%- include('./partials/head') -%>
+<%- include('./partials/navv') -%>
+
+
+
+
+<div class="container">
+  <div class="row mt-5">
+    <form action="/categorys/cate" method="POST">
+      <div class="card border-dark mb-3" style="max-width: 20rem;">
+        <div class="card-header"><h6>Agergar Departamento</h6></div>
+        <div class="card-body">
+          <div class="form-group">
+            <input type="text" name="category" autocomplete="off" placeholder="Departamento" class="validate">
+          </div>
+        </div>
+        <div class="card-header" >
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+      </div>
+    </form>
+
+    <!-- lista -->
+    <div class="col-md-7">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>N°</th width="200">
+            <th>Category</th>
+            <th>Accion</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for(var i = 0; i < categoris.length; i++) {%>
+              <tr>
+               <td><%= i + 1 %></td>
+                <td><%=categoris[i].category %></td>
+               <td> <a href="/categorys/delet/<%=categoris[i]._id %>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
+              </tr>
+            <%}%>
+        </tbody>
+      </table>
+    </div> 
+  </div>
+</div>
+
+
+<%- include('./partials/foot') -%>
