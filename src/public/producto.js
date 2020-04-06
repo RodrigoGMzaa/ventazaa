@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', e =>{
-    fetch('http://localhost:3000/products/busqueda')
+    fetch('https://cremeria.herokuapp.com/products/busqueda')
     .then(res => res.json())
     .then(data =>{
         if(data.response == 'success'){

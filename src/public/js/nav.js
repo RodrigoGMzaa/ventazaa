@@ -4,8 +4,6 @@ $(document).ready(function(){
 
     var show = 0; 
 
-    var direc = 'http://localhost:3000/';
-
     $('.show').on('click', function(){
 
         if(show == 1){
@@ -19,8 +17,5 @@ $(document).ready(function(){
 
     })
 
-    $('.href').on('click', function(){
-        url= direc+products/mostrar;
-    })
 
 })
