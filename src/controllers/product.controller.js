@@ -68,7 +68,7 @@ productct.getProduct = async (req, res) => {
 productct.editProduct = async (req, res) => {
     const{id} = req.params;
     await producto.update({_id: id}, req.body);
-    res.redirect('/products/pro');
+    res.redirect('/products/mostrar');
 };
 
 
