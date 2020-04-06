@@ -8,11 +8,30 @@ const products =  producto.find();
 const productct = {};
 
 
-productct.getProducts =  async (req, res) => {
-     const categoris = await categoria.find();
-     const products = await producto.find();
-     res.render('productos', {categoris, products});
+productct.mosProducts =  async (req, res) => {
+    const categoris = await categoria.find();
+   
+    res.render('productos', {categoris});
 };
+
+
+productct.getProducts =  async (req, res) => {
+    
+     res.render('productosbusqueda');
+};
+
+
+productct.buscarProducts = (req, res) => {
+    producto.find({},' ')
+    .then(doc =>{
+       res.json({response:'success', data:doc});
+    })
+    .catch(err =>{
+       console.log('error al cargar elementos', err.message);
+    });
+   
+ }; 
+
 
 productct.createProducts = async (req, res) => {
    
@@ -34,7 +53,7 @@ productct.createProducts = async (req, res) => {
 
     await newproduct.save();
   
-    res.redirect('pro');
+    res.redirect('/products/producto');
  
 };
 
@@ -57,7 +76,7 @@ productct.editProduct = async (req, res) => {
 productct.deletProduct = async (req, res) => {
  const Producto = await producto.findByIdAndRemove(req.params.id);
  await unlink(path.resolve('./src/public' + Producto.path));
-    res.redirect('/products/pro');
+    res.redirect('/products/mostrar');
 };
     
 productct.getsearch = async (req, res) => {

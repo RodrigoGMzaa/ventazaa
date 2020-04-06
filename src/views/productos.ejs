@@ -3,140 +3,96 @@
 
 
 <div class="container">
-  <div class="row mt-5">
-    <form action="/products/pro" method="POST" enctype="multipart/form-data">
-      <div class="card border-dark mb-3" style="max-width: 20rem;">
-        <div class="card-header"><h5>Agergar Producto</h5></div>
-        <div class="card-body">
-          <div class="form-group">
-            <input type="text" name="codigo" autocomplete="off" placeholder="Codigo" class="validate">
-          </div>
-          <div class="form-group">
-            <input type="text" name="nombre" autocomplete="off" placeholder="Nombre" class="validate">
-          </div>
-          <!--SELECT CATEGORY-->
-          <div class="form-group">
-            <select class="custom-select" name="departamento" >
-              <option selected>Departamento</option>
-              <% for(let i = 0; i < categoris.length; gi++) {%>
-               <option ><%=categoris[i].category%></option>
-               <%}%>
-          </select>
-          </div>
-          <div class="form-group">
-            <input type="text" name="stock" autocomplete="off" placeholder="stock" class="validate">
-          </div>
-          <div class="form-group">
-            <select class="custom-select" name="unidades" >
-              <option selected>Unidad</option>
-               <option >Kg</option>
-               <option >Pieza</option>
-               <option >lt</option>
-               
-          </select>
-
-          </div>
-          <!--caja descripcion-->
-          <div class="form-group">
-            <textarea class="form-control" name="descripcion" rows="3"  spellcheck="false" placeholder="descripcion" ></textarea>
-          </div>
-          <!--copy-->
-          <div>
-            <label for="recipient-name" class="col-form-label">Costo:</label>
-            <div class="input-group mb-3">
-            <div class="input-group-prepend">
-            <span class="input-group-text">$</span>
-             </div>
-                 <input type="text" class="form-control" name="costo" aria-label="Amount (to the nearest dollar)" placeholder="0.00">
-             </div>
-        </div>
-          <div class="row">
-            <div class="col">
-                <label for="recipient-name" class="col-form-label">Precio:</label>
-                <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                <span class="input-group-text">$</span>
-                 </div>
-                     <input type="text" class="form-control" name="precio" aria-label="Amount (to the nearest dollar)" placeholder="0.00">
-                 </div>
-            </div>
-
-             <div class="col">
-                <label for="recipient-name" class="col-form-label">Precio Mayoreo:</label>
-                <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">$</span>
+    <div class="row">
+      
+        <div class="col-md-5 offset-md-3">
+            <form action="/products/enviar" method="POST"  enctype="multipart/form-data">
+              <br>
+                <div class="card border-dark mb-3" style="max-width: 20rem;">
+                  <div class="card-header"><h5>Modificar Producto</h5></div>
+                  <div class="card-body">
+                    <div class="form-group">
+                      <input type="text" name="codigo" autocomplete="off" placeholder="Codigo" class="validate">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" name="nombre" autocomplete="off" placeholder="Nombre" class="validate" >
+                    </div>
+                    <!--SELECT CATEGORY-->
+                    <div class="form-group">
+                      <select class="custom-select" name="departamento" >
+                        <option selected name="departamento"></option>
+                        <% for(let i = 0; i < categoris.length; i++) {%>
+                         <option ><%=categoris[i].category%></option>
+                         <%}%>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" name="stock" autocomplete="off" placeholder="stock" class="validate">
+                    </div>
+                    <div class="form-group">
+                      <select class="custom-select" name="unidades" >
+                        <option selected>Unidad</option>
+                         <option >Kg</option>
+                         <option >Pieza</option>
+                         <option >lt</option>
+                         
+                    </select>
+            
+                    </div>
+                    <!--caja descripcion-->
+                    <div class="form-group">
+                      <textarea class="form-control" name="descripcion" rows="3"  spellcheck="false" placeholder="descripcion" class="validate"></textarea>
+                    </div>
+                    <!--copy-->
+                    <div>
+                      <label for="recipient-name" class="col-form-label">Costo:</label>
+                      <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                      <span class="input-group-text">$</span>
+                       </div>
+                           <input type="text" class="form-control" name="costo" aria-label="Amount (to the nearest dollar)" placeholder="0.00" class="validate">
+                       </div>
+                  </div>
+                    <div class="row">
+                      <div class="col">
+                          <label for="recipient-name" class="col-form-label">Precio:</label>
+                          <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                          <span class="input-group-text">$</span>
+                           </div>
+                               <input type="text" class="form-control" name="precio" aria-label="Amount (to the nearest dollar)" placeholder="0.00" class="validate" >
+                           </div>
+                      </div>
+            
+                       <div class="col">
+                          <label for="recipient-name" class="col-form-label">Precio Mayoreo:</label>
+                          <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text">$</span>
+                          </div>
+                              <input type="text" class="form-control" name="mayoreo" aria-label="Amount (to the nearest dollar)" placeholder="0.00" class="validate" >
+                           </div>
+                      </div>
+                  </div>
+            
+            
+                  <label for="recipient-name" class="col-form-label">Seleccione una Imagen:</label>
+                  <div class="input-group mb-3">
+                      <div class="custom-file">
+                          <input type="file" name="image" class="custom-file-input" >
+                          <label class="custom-file-label" for="inputGroupFile02">Imagen cargada..</label>
+                      </div>
+                  </div>
+            
+                  </div>
+                  <div class="form-group" style="text-align: right;width:200px" >
+                    <button type="submit"  class="btn btn-primary">Guardar</button>
+                  </div>
                 </div>
-                    <input type="text" class="form-control" name="mayoreo" aria-label="Amount (to the nearest dollar)" placeholder="0.00">
-                 </div>
-            </div>
+              </form>
         </div>
-
-
-        <label for="recipient-name" class="col-form-label">Seleccione una Imagen:</label>
-        <div class="input-group mb-3">
-            <div class="custom-file">
-                <input type="file" name="image" class="custom-file-input" >
-                <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
-            </div>
-        </div>
-
-        </div>
-        <div class="card-header" >
-          <button type="submit" class="btn btn-primary">Guardar</button>
-        </div>
-      </div>
-    </form>
-    
-  
-    
-
-    <!-- lista -->
-    <div class="col-md-7">    
-              <!--tabla-->
-      <table class="table table-bordered table-hover">
-        <thead>
-          <tr>
-            <th>N°</th width="200">
-            <th>Codigo</th>
-            <th>Imagen</th>
-            <th>Nombre</th>
-            <th>Departamento</th>
-            <th>Stock</th>
-            <th>U</th>
-            <th>Descripcion</th>
-            <th>Costo</th>
-            <th>Precio</th>
-            <th>P/Mayo</th>
-            <th>accion</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% for(let i = 0; i < products.length; i++) {%>
-            <tr>
-             <td><%= i + 1 %></td>
-             <td><%=products[i].codigo %></td>
-             <td><img src="<%=products[i].path %>" style="width:50px; height:50px;"></td>
-              <td><%=products[i].nombre %></td>
-              <td><%=products[i].departamento %></td>
-              <td><%=products[i].stock %></td>
-              <td><%=products[i].unidades %></td>
-              <td><%=products[i].descripcion %></td>
-              <td><%=products[i].costo %></td>
-              <td><%=products[i].precio %></td>
-              <td><%=products[i].mayoreo %></td>
-             <td> <a href="/products/delet/<%=products[i]._id %>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
-             <a href="/products/edit/<%=products[i]._id %>" class="btn btn-primary"><i class="fas fa-pen"></i></a>
-            </td>
-             
-            </tr>
-          <%}%>
-        </tbody>
-      </table>
-    </div> 
-  </div>
+    </div>
 </div>
-
 
 
 <%- include('./partials/foot') -%>

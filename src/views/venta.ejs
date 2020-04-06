@@ -1,0 +1,236 @@
+<%- include('./partials/head') -%>
+<%- include('./partials/navv') -%>
+
+<div class="container">
+
+    
+    <div class="row mt-4">
+
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    
+      
+    
+      
+  
+      <!-- lista -->
+      <div class="col-md-6">    
+                <!--tabla de venta-->
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" data-toggle="tab" href="#home">Quesillo</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#profile">Queso</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link "  data-toggle="tab" href="#dropdown1">Mole</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link " data-toggle="tab"  href="#dropdown2" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                      
+                    </li>
+                  </ul>
+                  <!--Venta quesillo-->
+                  
+                  <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade active show" id="home">
+                        <header>
+                            <div class="container">
+                                
+                            </div>
+                        </header>
+                    
+                        <main>
+                            <div class="pricing-header px-2 py-2 pt-md-1 pb-md-1 my-0 mx-auto text-center">
+                                <h5 class="display-8 mt-2">Lista de Precios y Cantidades</h5>
+                                <p class="lead">Selecciona uno</p>
+                            </div>
+                    
+                            <div class="container" id="lista-productos">
+                                
+                                <% for(let i = 0; i < rojo.length; i++) {%>
+                                <div class="card-deck mb-9 text-center">
+                                    
+                                    <div class="card mb-4 shadow-sm">
+                                        <div class="card-header">
+                                            <h4 class="my-0 font-weight-bold"><%=rojo[i].nombre %> </h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <img src="<%=rojo[i].path %>" class="card-img-top">
+                                            <h4 class="my-0 font-weight-bold">1 KG</h4>
+                                            <h1 class="card-title pricing-card-title precio">$<span class=""><%= (rojo[i].precio)/ 1%></span></h1>
+                                            
+                                            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="card mb-4 shadow-sm">
+                                        <div class="card-header">
+                                            <h4 class="my-0 font-weight-bold"><%=rojo[i].nombre %> </h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <img src="<%=rojo[i].path %>" class="card-img-top">
+                                            <h4 class="my-0 font-weight-bold">1/2 KG</h4>
+                                            <h1 class="card-title pricing-card-title precio">$<span class=""> <%= (rojo[i].precio * .500)/ 1%></span></h1>
+                                            
+                                            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="2">Comprar</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="card mb-4 shadow-sm">
+                                        <div class="card-header">
+                                            <h4 class="my-0 font-weight-bold"><%=rojo[i].nombre %> </h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <img src="<%=rojo[i].path %>" class="card-img-top">
+                                            <h4 class="my-0 font-weight-bold">1/4 KG</h4>
+                                            <h1 class="card-title pricing-card-title precio">$<span class=""> <%= (rojo[i].precio * .250)/ 1%></span></h1>
+                                            
+                                            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="3">Comprar</a>
+                                        </div>
+                                    </div>
+                                    <%}%>
+
+                    
+                                    
+                    
+                                <div class="card-deck mb-3 text-center">
+                                    
+                                    <% for(let i = 0; i < colorado.length; i++) {%>
+                                        <div class="card mb-4 shadow-sm">
+                                            <div class="card-header">
+                                                <h4 class="my-0 font-weight-bold"><%=colorado[i].nombre %></h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <img src="<%=colorado[i].path %>" class="card-img-top">
+                                                <h4 class="my-0 font-weight-bold">1 KG</h4>
+                                                <h1 class="card-title pricing-card-title precio">$ <span class=""><%= (colorado[i].precio  )/ 1%></span></h1>
+                        
+                                               
+                                                <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="4">Comprar</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="card mb-4 shadow-sm">
+                                            <div class="card-header">
+                                                <h4 class="my-0 font-weight-bold"><%=colorado[i].nombre %></h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <img src="<%=colorado[i].path %>" class="card-img-top">
+                                                <h4 class="my-0 font-weight-bold">1/2 KG</h4>
+                                                <h1 class="card-title pricing-card-title precio">$ <span class=""><%= (colorado[i].precio * .500 )/ 1%></span></h1>
+                        
+                                               
+                                                <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="5">Comprar</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="card mb-4 shadow-sm">
+                                            <div class="card-header">
+                                                <h4 class="my-0 font-weight-bold"><%=colorado[i].nombre %></h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <img src="<%=colorado[i].path %>" class="card-img-top">
+                                                <h4 class="my-0 font-weight-bold">1/4 KG</h4>
+                                                <h1 class="card-title pricing-card-title precio">$ <span class=""><%= (colorado[i].precio * .250 )/ 1%></span></h1>
+                        
+                                               
+                                                <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="5">Comprar</a>
+                                            </div>
+                                        </div>
+    
+                                       <%}%>
+                    
+                                   
+                    
+                                    
+                    
+                                </div>
+                    
+                                <div class="card-deck mb-3 text-center">
+                                    
+                                    <div class="card mb-4 shadow-sm">
+                                        <div class="card-header">
+                                            <h4 class="my-0 font-weight-bold">LG</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <img src="img/lg.jpg" class="card-img-top">
+                                            <h1 class="card-title pricing-card-title precio">S/. <span class="">4299</span></h1>
+                    
+                                            <ul class="list-unstyled mt-3 mb-4">
+                                                <li></li>
+                                                <li>8 GB RAM</li>
+                                                <li>COLOR PLATEADO</li>
+                                                <li>256 GB DD</li>
+                                            </ul>
+                                            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="7">Comprar</a>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card mb-4 shadow-sm">
+                                        <div class="card-header">
+                                            <h4 class="my-0 font-weight-bold">ADVANCE</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <img src="img/advance.jpg" class="card-img-top">
+                                            <h1 class="card-title pricing-card-title precio">S/. <span class="">869</span></h1>
+                    
+                                            <ul class="list-unstyled mt-3 mb-4">
+                                                <li></li>
+                                                <li>3 GB RAM</li>
+                                                <li>COLOR NEGRO</li>
+                                                <li>64 GB DD</li>
+                                            </ul>
+                                            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="8">Comprar</a>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card mb-4 shadow-sm">
+                                        <div class="card-header">
+                                            <h4 class="my-0 font-weight-bold">DELL</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <img src="img/dell.jpg" class="card-img-top">
+                                            <h1 class="card-title pricing-card-title precio">S/. <span class="">5397</span></h1>
+                    
+                                            <ul class="list-unstyled mt-3 mb-4">
+                                                <li></li>
+                                                <li>8 GB RAM</li>
+                                                <li>COLOR NEGRO</li>
+                                                <li>1 TB DD</li>
+                                            </ul>
+                                            <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="9">Comprar</a>
+                                        </div>
+                                    </div>
+                    
+                                </div>
+                    
+                    
+                            </div>
+                        </main>
+                    </div>
+
+
+
+                    <div class="tab-pane fade" id="profile">
+                      <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+                    </div>
+                    <div class="tab-pane fade" id="dropdown1">
+                      <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
+                    </div>
+                    <div class="tab-pane fade" id="dropdown2">
+                      <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</p>
+                    </div>
+                  </div>
+      </div> 
+    </div>
+  </div>
+
+  <%- include('./partials/foot') -%>

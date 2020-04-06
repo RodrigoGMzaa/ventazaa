@@ -42,14 +42,17 @@ app.use(multer({storage: storage}).single('image'));
 
 
 
-
 // Routes
 app.use(require('./routes/index')); 
 app.use('/categorys',require('./routes/categorys'));
-app.use('/products', require('./routes/productos'));
+app.use('/products',require('./routes/productos'));
+app.use('/sales',require('./routes/ventas'));
+app.use('/clien',require('./routes/clientes'));
+
 
 // Static File 
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 
 // Server is Listenning

@@ -6,9 +6,13 @@ const productct = require('../controllers/product.controller');
 
 
 
-router.get('/pro', productct.getProducts);
+router.get('/mostrar', productct.getProducts);
 
-router.post('/pro', productct.createProducts);
+router.get('/busqueda', productct.buscarProducts);
+
+router.get('/producto', productct.mosProducts);
+
+router.post('/enviar', productct.createProducts);
 
 router.get('/edit/:id', productct.getProduct);
 

@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+    height: 60px;
+    background:  rgb(35, 35, 139);
+}
+
+header span{
+    font-size: 30px;
+    padding: 10px;
+    color: aliceblue;
+    transition: all 200ms;
+    cursor: pointer;
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+
+header span:hover{
+    background: rgba(0, 0, 0, 0.527);
+    border-radius: 15px;
+}
+
+main{
+    width: 100%;
+    display: flex;
+}
+
+.content-menu{
+    width: 70px;
+    background-color: rgb(243, 243, 243);
+    transition: all 300ms;
+}
+
+.content-menu2{
+    margin-left: -100px;
+}
+
+
+.content-menu li{
+    list-style: none;
+    padding: 14px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.content-menu li:hover{
+    transform: translateX(5px);
+    background: rgba(207, 207, 207, 0.527);
+}
+
+.content-menu span{
+ font-size: 20px;
+}
+
+.content-menu li p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 100;
+    transform: translateY(10px) translateX(-110px);
+    transition: all 300ms;
+    
+}
+
+.icon1{
+    color: red;
+}
+
+.icon2{
+    color: rgb(197, 189, 74);
+}
+
+.icon3{
+    color: rgb(35, 35, 139);
+}
+
+.icon4{
+    color: rgb(110, 12, 12);
+}
+
+.content-menu li:hover .text1{
+    transform: translateX(0px);
+}
+
+.content-menu li:hover .text2{
+    transform: translateX(0px);
+}
+
+.content-menu li:hover .text3{
+    transform: translateX(0px);
+}
+
+.content-menu li:hover .text4{
+    transform: translateX(0px);
+}

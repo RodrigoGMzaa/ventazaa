@@ -3,20 +3,29 @@ const categoria = require('../models/category.js');
 const categoryct = {};
 
 
-
-categoryct.getCategorys = async (req, res) => {
-   const categoris = await categoria.find();
-   //res.json(categoris);
-   res.render('categorias', {categoris});
+categoryct.getCategorys = (req, res) => {
+   categoria.find({},'category completed')
+   .then(doc =>{
+      res.json({response:'success', data:doc});
+   })
+   .catch(err =>{
+      console.log('error al cargar elementos', err.message);
+   });
+  
 }; 
 
+categoryct.agreCategorys = async (req, res) => {
+
+   //res.json(categoris);
+   res.render('agrecate');
+}; 
 
 categoryct.createCategorys = async (req, res) => {
    const {category} = req.body;
     
        const newcategory = new categoria({category});
        await newcategory.save();
-       res.redirect('cate');
+       res.redirect('busqueda');
    
 };
 
@@ -38,7 +47,7 @@ categoryct.editCategory = async (req, res) => {
 
 categoryct.deletCategory = async (req, res) => {
    await categoria.findByIdAndRemove(req.params.id);
-   res.redirect('/categorys/cate');
+   res.redirect('/categorys/busqueda');
 };
     
 
