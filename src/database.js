@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/zaachila', {
+mongoose.connect('mongodb://utvco:utvco2020@ds161028.mlab.com:61028/cremeria', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
