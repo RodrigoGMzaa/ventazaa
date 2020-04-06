@@ -76,7 +76,7 @@ productct.editProduct = async (req, res) => {
 productct.deletProduct = async (req, res) => {
  const Producto = await producto.findByIdAndRemove(req.params.id);
  await unlink(path.resolve('./src/public' + Producto.path));
-    res.redirect('/products/mostrar');
+ res.redirect('/products/mostrar');
 };
     
 productct.getsearch = async (req, res) => {
