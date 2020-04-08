@@ -18,7 +18,7 @@
                
                                     <input type="text" id="busquedacliente" class="form-control" placeholder="Buscar..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                                     <div class="input-group-append">
-                                      <button class="btn btn-outline-secondary bg-primary text-white" id="botonCliente"><i class="fas fa-search "></i></button>
+                                      <button class="btn  bg-primary text-white" id="botonCliente"><i class="fas fa-search "></i></button>
                                     </div>
                                   </div>
                             </div>
@@ -57,7 +57,13 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm-3">
-                                <input type="text" class="form-control" id="busquedaproducto" placeholder="Busqueda">
+                              <div class="input-group mb-2">
+               
+                                <input type="text" id="busquedaproducto" class="form-control" placeholder="Buscar..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                  <button class="btn  bg-primary text-white" id="botonProducto"><i class="fas fa-search "></i></button>
+                                </div>
+                              </div>
                             </div>
                            
                         </div>
@@ -109,7 +115,7 @@
             <div class="card">
               <div class="card-body">
                 <div class="col-8">
-                    <table class="table">
+                    <table class="table" id="table" >
                       <thead>
                         <tr>
                           <th>Producto</th>
@@ -120,7 +126,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr *ngFor="let pr of venta.productos_detalle; let i = index">
+                        <tr>
                           <td></td>
                           <td></td>
                           <td></td>
@@ -147,4 +153,5 @@
   <script src="https://code.jquery.com/jquery-3.4.1.slim.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="/js/Clienventa.js"></script>
+  <script src="/js/productoventa.js"></script>
   <%- include('./partials/foot') -%>
