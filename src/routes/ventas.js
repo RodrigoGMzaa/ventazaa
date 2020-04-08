@@ -1,12 +1,12 @@
 const express = require('express');
-const VentaController = require("./../controller/ventaController");
+const router = express.Router();
+const VentaController = require("./../controllers/ventas.controller");
 
-var router = express.Router();
+
 
 router.get('/ventas', function(req, res) {
     res.render('venta');
   });
-
 router.post("/venta", VentaController.guardar);
 router.get("/venta", VentaController.listar);
 
