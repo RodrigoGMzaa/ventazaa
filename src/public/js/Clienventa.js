@@ -37,7 +37,7 @@ const filtrar = () =>{
     //para filtrar sin precionar buscar 
     formulario.addEventListener('keyup',filtrar);
     //ejecuta la funcion al inicio para que me aparescan todos los datos
-    filtrar();
+    
     
             }
         })
