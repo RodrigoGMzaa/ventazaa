@@ -1,21 +1,9 @@
 const express = require('express');
-const router = express.Router();
+const VentaController = require("./../controller/ventaController");
 
-//archivo de controller
-const ventact = require('../controllers/ventas.controller');
+var router = express.Router();
 
-
-
-router.get('/ven', ventact.getVentas);
-
-router.post('/ven', ventact.createVentas);
-
-router.get('/edit/:id', ventact.getVenta);
-
-router.post('/edit/:id', ventact.editVenta);
-
-router.get('/delet/:id', ventact.deletVenta);
-
-router.get('/search', ventact.getsearch);
+router.post("/venta", VentaController.guardar);
+router.get("/venta", VentaController.listar);
 
 module.exports = router;

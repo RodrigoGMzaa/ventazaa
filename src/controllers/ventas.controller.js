@@ -1,84 +1,92 @@
-const producto = require('../models/product');
-const {unlink} = require('fs-extra');
-const path = require('path');
+const Venta = require("./../models/ventaModels");
+const Producto = require("./../models/productoModels");
+
+let guardar = async (req, res) => {
+
+    let body = req.body;
+
+    validar_cantidad(body.productos_detalle, (respuesta) => {
+
+        if (respuesta == false)
+            return res.json({
+                ok: false,
+                mensaje: "No hay productos para guardar"
+            });
 
 
-
-const ventact = {};
-
-
-ventact.getVentas =  async (req, res) => {
-    const rojo = await producto.find({_id:'5e3dc2438a94bf4f5c27aa8d' }, req.body);
-    const colorado = await producto.find({_id:'5e3dc1558a94bf4f5c27aa8b' }, req.body);
-    res.render('venta', {rojo, colorado});
-
-     
-     
-
-};
-
-
-ventact.createVentas = async (req, res) => {
-   
-    const newproduct = new producto();
-    newproduct.codigo = req.body.codigo;
-    newproduct.nombre = req.body.nombre;
-    newproduct.departamento = req.body.departamento;
-    newproduct.stock = req.body.stock,
-    newproduct.unidades = req.body.unidades,
-    newproduct.descripcion = req.body.descripcion;
-    newproduct.costo = req.body.costo;
-    newproduct.precio = req.body.precio;
-    newproduct.mayoreo = req.body.mayoreo;
-    newproduct.filname = req.file.filename;
-    newproduct.path = '/images/uploads/' + req.file.filename;
-    newproduct.originalname = req.file.originalname;
-    newproduct.mimetype = req.file.mimetype;
-    newproduct.size = req.file.size;
-
-    await newproduct.save();
-  
-    res.redirect('pro');
- 
-};
-
-
-ventact.getVenta = async (req, res) => {
-    const categoris = await categoria.find();
-    const{id} = req.params;
-    const Producto = await producto.findById(id);
-     res.render('editpro', {Producto, categoris});
-};
-
-ventact.editVenta = async (req, res) => {
-    const{id} = req.params;
-    await producto.update({_id: id}, req.body);
-    res.redirect('/products/pro');
-};
-
-
-
-ventact.deletVenta = async (req, res) => {
- const Producto = await producto.findByIdAndRemove(req.params.id);
- await unlink(path.resolve('./src/public' + Producto.path));
-    res.redirect('/products/pro');
-};
-    
-ventact.getsearch = async (req, res) => {
-    let productoss;
-    if(req.require){
-        coches = await  producto.find(
-            {$text:{
-                $search: req.require.q
-            }},
-            {
-                score: {$meta: 'textScore'}
-            }
-        ).sort({
-            score: { $meta: 'textScore'}
+        let venta = new Venta({
+            valor_total: body.total,
+            cliente: body.cliente,
+            productos: respuesta
         });
-    }
-    res.json(productoss);
-};
 
-module.exports = ventact;
+        venta.save((err, ventaNew) => {
+
+            if (err)
+                return res.json({
+                    ok: false,
+                    err
+                });
+
+            res.json({
+                ok: true,
+                ventaNew
+            });
+        })
+    })
+
+
+}
+
+let validar_cantidad = async (productos, callback) => {
+
+    let productos_id = [];
+    productos.forEach(element => {
+        productos_id.push(element.producto_id);
+    });
+
+    let respuesta = [];
+
+    Producto.find({})
+        .where("_id").in(productos_id)
+        .exec(async (err, data) => {
+
+            for(let i = 0; i < data.length; i++){
+
+                let cantidad = productos.find(p => p.producto_id == data[i]._id).cantidad;
+
+                if (cantidad <= data[i].cantidad) {
+
+                    cantidad_nueva = data[i].cantidad - cantidad;
+
+                    let modifico = await Producto.findByIdAndUpdate(data[i]._id, {
+                        cantidad: cantidad_nueva
+                    });
+
+                    if (modifico != false) {
+                        respuesta.push({
+                            productos: data[i]._id,
+                            cantidad: cantidad
+                        });
+                    }
+                }
+            }
+
+            callback(respuesta.length == 0 ? false : respuesta);
+
+        })
+}
+
+let listar = (req, res) => {
+    Venta.find({})
+        .populate("cliente")
+        .populate("productos.productos")
+        .exec((err, data) => {
+            res.json(data);
+        });
+}
+
+module.exports = {
+    guardar,
+    listar
+}
