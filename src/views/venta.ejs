@@ -2,15 +2,148 @@
 <%- include('./partials/navv') -%>
 
 <div class="container-fluid">
+   <form action="">
     <div class="row">
-        <div class="col">col</div>
-        <div class="col">col</div>
+        <div class="col">
+            <!--Cliente-->
+            
+            <h5 align="center">Cliente</h5>
+            <div class="col-sm">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="input-group mb-2">
+               
+                                    <input type="text" id="busquedacliente" class="form-control" placeholder="Buscar..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                      <button class="btn btn-outline-secondary bg-primary text-white" id="botonCliente"><i class="fas fa-search "></i></button>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-sm-0">
+                                <a href=""><Nav>N°</Nav></a>
+                            </div>
+                            <div class="col-sm-1">
+                                <a href=""><Nav>0000</Nav></a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm">
+                                <input type="text" class="form-control" id="inputCliente" placeholder="Nombre">
+                            </div>
+                            <div class="col-sm">
+                                <input type="number" class="form-control" id="inputCliente2" placeholder="Telefono">
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            
+        </div>
+        
         <div class="w-100"></div>
-        <div class="col">col</div>
-        <div class="col">col</div>
+        <!--Producto-->
+        <div class="col">
+            
+            <h5 align="center">Producto</h5>
+            <div class="col-sm">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="busquedaproducto" placeholder="Busqueda">
+                            </div>
+                           
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm">
+                                <input type="text" class="form-control" id="producto" placeholder="Nombre">
+                            </div>
+                            <div class="col-sm">
+                                
+                                <input type="number" class="form-control" id="precio" placeholder="Precio">
+                            </div>
+                            <div class="col-sm-0">
+                                <button type="button" class="btn btn-danger">-</button>
+                            </div>
+                            <div class="col-sm-1">
+                                <input type="number" class="form-control" id="cantidad" placeholder="0">
+                            </div>
+                            <div class="col-sm-0">
+                                <button type="button" class="btn btn-success">+</button>
+                            </div>
+                           
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <!--divicoon de 2 card-->
         <div class="w-100"></div>
-        <div class="col">col</div>
-        <div class="col">col</div>
+        <!--Productos a granel-->
+        <div class="col">
+            <br>
+            <div class="col-sm">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <!--ventas-->
+        <div class="col">
+            <br>
+            <div class="col-sm">
+            <div class="card">
+              <div class="card-body">
+                <div class="col-8">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Producto</th>
+                          <th>Cantidad</th>
+                          <th>Precio</th>
+                          <th>Sub total</th>
+                          <th>Eliminar</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let pr of venta.productos_detalle; let i = index">
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                      <thead>
+                        <tr>
+                          <th colspan="4"></th>
+                          <th>TOTAL:</th>
+                        </tr>
+                      </thead>
+                    </table>
+                    <button class="btn btn-success float-right" (click)="guardar()">Cobrar</button>
+                  </div>
+              </div>
+            </div>
+          </div></div>
     </div>
+   </form>
   </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="/js/Clienventa.js"></script>
   <%- include('./partials/foot') -%>

@@ -1,5 +1,5 @@
-const Venta = require("./../models/ventaModels");
-const Producto = require("./../models/productoModels");
+const Venta = require("../models/ventaModels");
+const Producto = require("../models/product");
 
 let guardar = async (req, res) => {
 
