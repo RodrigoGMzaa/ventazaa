@@ -28,7 +28,7 @@ const filtrar = () =>{
             document.getElementById("precio").value=moleszaachil._id;
             
            
-            $( "#boto" ).click(function() {
+            $( "#botonproducto" ).click(function() {
 
                
               });
