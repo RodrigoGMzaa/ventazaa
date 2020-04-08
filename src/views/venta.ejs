@@ -26,20 +26,20 @@
           <div class="form-group">
             <label for="">Producto</label>
             
-           <select name="" id="" class="form-control" (change)="poner_precio()" [(ngModel)]="venta.producto">
+           <select name=""  class="form-control" (change)="poner_precio()" id="venta.producto">
               <option value="">Seleccionar</option>
-              <option *ngFor="let producto of productos" value="{{producto._id}}-{{producto.precio}}-{{producto.nombre}}">
+              <option  ">
                 {{producto.nombre}}
               </option>
             </select>
           </div>
           <div class="form-group">
             <label for="">Precio</label>
-            <input type="text" class="form-control" disabled [(ngModel)]="venta.precio">
+            <input type="text" class="form-control" disabled id="venta.precio">
           </div>
           <div class="form-group">
             <label for="">Cantidad</label>
-            <input type="text" class="form-control" [(ngModel)]="venta.cantidad">
+            <input type="text" class="form-control" id="venta.cantidad">
           </div>
           <div class="form-group">
             <button class="btn btn-primary float-right" (click)="agregar()" >Agregar</button>
@@ -57,7 +57,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let pr of venta.productos_detalle; let i = index">
+              <tr id="venta.productos_detalle">
                 <td>{{pr.producto_nombre}}</td>
                 <td>{{pr.cantidad}}</td>
                 <td>{{pr.precio}}</td>
