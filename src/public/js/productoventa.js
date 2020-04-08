@@ -25,7 +25,7 @@ const filtrar = () =>{
       if(productos.indexOf(texto) !== -1){
             
             document.getElementById("producto").value=moleszaachil.nombre;
-            document.getElementById("precio").value=moleszaachil._id;
+            document.getElementById("precio").value=moleszaachil.precio;
             
            
             $( "#botonproducto" ).click(function() {
