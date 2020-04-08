@@ -7,22 +7,22 @@ window.addEventListener('DOMContentLoaded', e =>{
             
 
 const formulario = document.querySelector('#formulario');
-const boton = document.querySelector('#boton');
+const boton = document.querySelector('#botonproducto');
 const resultado = document.querySelector('#producto');
 
 
 
 
 const filtrar = () =>{
-    //console.log(formulario.value);
+  //console.log(formulario.value);
 
-    resultado.innerHTML = "";
+  resultado.innerHTML = "";
 
-    const texto = formulario.value.toLowerCase();
-    
-    for(let moleszaachil of moleszaachila){
-        let productos = moleszaachil.producto.toLowerCase();
-        if(productos.indexOf(texto) !== -1){
+  const texto = formulario.value.toLowerCase();
+
+  for(let moleszaachil of moleszaachila){
+      let productos = newFunction(moleszaachil);
+      if(productos.indexOf(texto) !== -1){
             
             document.getElementById("producto").value=moleszaachil.nombre;
             document.getElementById("precio").value=moleszaachil._id;
@@ -99,3 +99,6 @@ formulario.addEventListener('keyup',filtrar);
 
    
 });
+function newFunction(moleszaachil) {
+  return moleszaachil.nombre.toLowerCase();
+}
