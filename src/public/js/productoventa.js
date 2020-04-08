@@ -80,7 +80,7 @@ $('#tiket').click(function () {
   
   function agregar(){
     tiketDatos.push(nuevoTiket);
-    document.getElementById("tabla").innerHTML +='<td>'+nuevoTiket.category+'</td><td>'+nuevoTiket.id+'</td><td>'+nuevoTiket.cantidad+'</td>'
+    document.getElementById("venta_detalle").innerHTML +='<td>'+nuevoTiket.category+'</td><td>'+nuevoTiket.id+'</td><td>'+nuevoTiket.cantidad+'</td>'
   }
   
 
