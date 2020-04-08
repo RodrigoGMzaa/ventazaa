@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', e =>{
             const moleszaachila = data.data;
             
 
-const formulario = document.querySelector('#formulario');
+const formulario = document.querySelector('#busquedaproducto');
 const boton = document.querySelector('#botonproducto');
 const resultado = document.querySelector('#producto');
 
