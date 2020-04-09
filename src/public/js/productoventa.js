@@ -84,7 +84,7 @@ $('#tiket').click(function () {
   function agregar(){
     tiketDatos.push(nuevoTiket);
     subtotal = nuevoTiket.precio * nuevoTiket.cantidad
-    document.getElementById("venta_detalle").innerHTML +='<td>'+nuevoTiket.nombre+'</td><td>'+nuevoTiket.precio+'</td><td>'+nuevoTiket.cantidad+'</td>'+'</td><td>'+nuevoTiket.subtotal+'</td>'
+    document.getElementById("venta_detalle").innerHTML +='<td>'+nuevoTiket.nombre+'</td><td>'+nuevoTiket.precio+'</td><td>'+nuevoTiket.cantidad+'</td>'+'</td><td>'+subtotal+'</td>'
   }
   
 
