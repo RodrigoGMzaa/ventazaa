@@ -106,8 +106,8 @@ formulario.addEventListener('keyup',filtrar);
     //evento eliminar
   
 
-$('#boton01').click( function(){
-  console.log("eliminar");
+$('#boton01').click( function(event){
+  $('#boton01').remove();
 });
    
 });
