@@ -65,8 +65,7 @@ $('#tiket').click(function () {
 
   
     nuevoTiket = new tiket(nombreCapturar, precioCapturar, cantidadCapturar);
-    
-    
+      console.log(nuevoTiket);
       agregar();
       
           
@@ -84,28 +83,9 @@ $('#tiket').click(function () {
   
   //funcion agregar 
   function agregar(){
-
-    
-
-    for(let nuevoTiket of tiketDatos){
-      let productos = newFunction(nuevoTiket);
-      if(productos.indexOf(nuevoTiket.nombre) !== -1){
-            
-        console.log(nuevoTiket.nombre); 
-        console.log(nuevoTiket.cantidad);
-        console.log(cantidadCapturar);
-
-              
-        
-        }else{
-          tiketDatos.push(nuevoTiket);
-          console.log(nuevoTiket.nombre);
-          subtotal = nuevoTiket.precio * nuevoTiket.cantidad
-          document.getElementById("venta_detalle").innerHTML +='<td>'+nuevoTiket.nombre+'</td><td>'+nuevoTiket.precio+'</td><td>'+nuevoTiket.cantidad+'</td>'+'</td><td>'+subtotal+'</td><td><btn value="Eliminar" title="Eliminar" class="btn btn-danger btn-delete"><i class="fas fa-trash"></i></td>'
-        }
-    
-      }
-      console.log("no esta jalando");
+    tiketDatos.push(nuevoTiket);
+    subtotal = nuevoTiket.precio * nuevoTiket.cantidad
+    document.getElementById("venta_detalle").innerHTML +='<td>'+nuevoTiket.nombre+'</td><td>'+nuevoTiket.precio+'</td><td>'+nuevoTiket.cantidad+'</td>'+'</td><td>'+subtotal+'</td><td><btn value="Eliminar" title="Eliminar" class="btn btn-danger btn-delete"><i class="fas fa-trash"></i></td>'
    
   }
   
