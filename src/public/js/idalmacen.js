@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', e =>{
-    fetch('https://cremeria.herokuapp.com/almacen/mostrar')
+    fetch('https://cremeria.herokuapp.com/almacen/busqueda')
     .then(res => res.json())
     .then(data =>{
         if(data.response == 'success'){
@@ -18,8 +18,8 @@ window.addEventListener('DOMContentLoaded', e =>{
     const texto = formulario.value.toLowerCase();
   
     for(let moleszaachil of moleszaachila){
-        let almacen = newFunction(moleszaachil);
-        if(almacen.indexOf(texto) !== -1){
+        let almacenes = newFunction(moleszaachil);
+        if(almacenes.indexOf(texto) !== -1){
               
               document.getElementById("inputAlmacen").value=moleszaachil.nombre;
               document.getElementById("inputAlmacen2").value=moleszaachil._id;
