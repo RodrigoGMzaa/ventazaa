@@ -65,7 +65,8 @@ $('#tiket').click(function () {
 
   
     nuevoTiket = new tiket(nombreCapturar, precioCapturar, cantidadCapturar);
-    const texto = nuevoTiket.nombre.value.toLowerCase();  
+    const conver = nuevoTiket.nombre.value.toLowerCase();
+    const texto = conver.value.toLowerCase();  
     console.log(texto);
       agregar();
       
