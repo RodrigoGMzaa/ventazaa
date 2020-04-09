@@ -18,8 +18,8 @@ window.addEventListener('DOMContentLoaded', e =>{
     const texto = formulario.value.toLowerCase();
   
     for(let moleszaachil of moleszaachila){
-        let cliente = newFunction(moleszaachil);
-        if(cliente.indexOf(texto) !== -1){
+        let almacen = newFunction(moleszaachil);
+        if(almacen.indexOf(texto) !== -1){
               
               document.getElementById("inputAlmacen").value=moleszaachil.nombre;
               document.getElementById("inputAlmacen2").value=moleszaachil._id;
