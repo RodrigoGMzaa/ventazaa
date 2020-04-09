@@ -36,6 +36,7 @@ const filtrar = () =>{
               
         
         }
+        
     }
     if(resultado.innerHTML == ''){
         
@@ -79,12 +80,12 @@ $('#tiket').click(function () {
   var tiketDatos =[];
   
    subtotal = 0; 
-   productob = moleszaachil.nombre;
+   
   
   //funcion agregar 
   function agregar(){
 
-    const texto = productob.value.toLowerCase();
+    const texto = nombreCapturar.value.toLowerCase();
 
     for(let nuevoTiket of tiketDatos){
       let productos = newFunction(nuevoTiket);
