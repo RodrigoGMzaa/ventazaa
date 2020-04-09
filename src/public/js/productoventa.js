@@ -67,7 +67,7 @@ $('#tiket').click(function () {
     nuevoTiket = new tiket(nombreCapturar, precioCapturar, cantidadCapturar);
       console.log(nuevoTiket);
       agregar();
-
+      return false;
           
                                                                   
    
@@ -80,11 +80,12 @@ $('#tiket').click(function () {
    subtotal = 0; 
 
   
-  
+  //funcion agregar 
   function agregar(){
     tiketDatos.push(nuevoTiket);
     subtotal = nuevoTiket.precio * nuevoTiket.cantidad
-    document.getElementById("venta_detalle").innerHTML +='<td>'+nuevoTiket.nombre+'</td><td>'+nuevoTiket.precio+'</td><td>'+nuevoTiket.cantidad+'</td>'+'</td><td>'+subtotal+'</td>'
+    document.getElementById("venta_detalle").innerHTML +='<td>'+nuevoTiket.nombre+'</td><td>'+nuevoTiket.precio+'</td><td>'+nuevoTiket.cantidad+'</td>'+'</td><td>'+subtotal+'</td><td><btn value="Eliminar" title="Eliminar" class="btn btn-danger btn-delete"><i class="fas fa-trash"></i><></td>'
+    return false;
   }
   
 
@@ -101,8 +102,14 @@ formulario.addEventListener('keyup',filtrar);
         console.error(err);
     });
 
+    //evento eliminar
+$(document).on('click', 'btn-delete', function(e){
+  e.preventDefault();
+  console.log("eliminar");
+});
    
 });
 function newFunction(moleszaachil) {
   return moleszaachil.nombre.toLowerCase();
 }
+

@@ -31,6 +31,7 @@ const filtrar = () =>{
             <p> Categoria no encontrado</p>
             `
         }
+        return false;
     }
     
     boton.addEventListener('click', filtrar);
