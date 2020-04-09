@@ -20,6 +20,6 @@ router.post('/edit/:id', productct.editProduct);
 
 router.get('/delet/:id', productct.deletProduct);
 
-router.get('/search', productct.getsearch);
+
 
 module.exports = router;
