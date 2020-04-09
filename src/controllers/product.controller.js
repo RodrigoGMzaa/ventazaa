@@ -79,21 +79,6 @@ productct.deletProduct = async (req, res) => {
  res.redirect('/products/mostrar');
 };
     
-productct.getsearch = async (req, res) => {
-    let productoss;
-    if(req.require){
-        coches = await  producto.find(
-            {$text:{
-                $search: req.require.q
-            }},
-            {
-                score: {$meta: 'textScore'}
-            }
-        ).sort({
-            score: { $meta: 'textScore'}
-        });
-    }
-    res.json(productoss);
-};
+
 
 module.exports = productct;
