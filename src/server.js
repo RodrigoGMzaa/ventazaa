@@ -48,6 +48,7 @@ app.use('/categorys',require('./routes/categorys'));
 app.use('/products',require('./routes/productos'));
 app.use('/sales',require('./routes/ventas'));
 app.use('/clien',require('./routes/clientes'));
+app.use('/almacen',require('./routes/almacen'));
 
 
 // Static File 
