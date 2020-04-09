@@ -65,7 +65,8 @@ $('#tiket').click(function () {
 
   
     nuevoTiket = new tiket(nombreCapturar, precioCapturar, cantidadCapturar);
-      console.log(nuevoTiket.nombre);
+    const texto = nuevoTiket.nombre.value.toLowerCase();  
+    console.log(texto);
       agregar();
       
           
@@ -84,7 +85,7 @@ $('#tiket').click(function () {
   //funcion agregar 
   function agregar(){
 
-    const texto = nuevoTiket.nombre.value.toLowerCase();
+    
 
     for(let nuevoTiket of tiketDatos){
       let productos = newFunction(nuevoTiket);
