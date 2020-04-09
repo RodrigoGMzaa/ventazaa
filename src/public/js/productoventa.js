@@ -45,9 +45,9 @@ const filtrar = () =>{
 
 $('#tiket').click(function () {
 
-    function tiket(category, id, cantidad){
-        this.category=category;
-        this.id=id;
+    function tiket(nombre, precio, cantidad){
+        this.nombre=nombre;
+        this.precio=precio;
         this.cantidad=cantidad;
       }
 
@@ -64,7 +64,7 @@ $('#tiket').click(function () {
     }
 
   
-    nuevoTiket = new tiket(categoriaCapturar, idCapturar, cantidadCapturar);
+    nuevoTiket = new tiket(nombreCapturar, precioCapturar, cantidadCapturar);
       console.log(nuevoTiket);
       agregar();
 
@@ -77,10 +77,13 @@ $('#tiket').click(function () {
 
   var tiketDatos =[];
   
+  var subtotal = 0; 
+
+  subtotal = nuevoTiket.precio * nuevoTiket.cantidad
   
   function agregar(){
     tiketDatos.push(nuevoTiket);
-    document.getElementById("venta_detalle").innerHTML +='<td>'+nuevoTiket.category+'</td><td>'+nuevoTiket.id+'</td><td>'+nuevoTiket.cantidad+'</td>'
+    document.getElementById("venta_detalle").innerHTML +='<td>'+nuevoTiket.nombre+'</td><td>'+nuevoTiket.precio+'</td><td>'+nuevoTiket.cantidad+'</td>'+'</td><td>'+nuevoTiket.subtotal+'</td>'
   }
   
 
