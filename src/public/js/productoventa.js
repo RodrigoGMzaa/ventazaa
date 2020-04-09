@@ -77,9 +77,9 @@ $('#tiket').click(function () {
 
   var tiketDatos =[];
   
-  var subtotal = 0; 
+   subtotal = 0; 
 
-  subtotal = nuevoTiket.precio * nuevoTiket.cantidad
+  
   
   function agregar(){
     tiketDatos.push(nuevoTiket);
