@@ -32,9 +32,9 @@ almacenct.buscarAlmacenes = (req, res) => {
 almacenct.createAlmacenes = async (req, res) => {
    
     const newalmacen = new almacen();
-    newalamacen.nombre = req.body.nombre;
+    newalmacen.nombre = req.body.nombre;
     newalmacen.stock = req.body.stock;
-
+ 
     await newalmacen.save();
   
     res.redirect('/almacen/mostrar');

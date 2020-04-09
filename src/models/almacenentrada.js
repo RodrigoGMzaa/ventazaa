@@ -3,7 +3,7 @@ const {Schema} = mongoose;
 
 const almacenSchema = new Schema({
     nombre: {type: String},
-    stock: {type: String},
+    stock: {type: Number},
     date: {type: Date, default: Date.now()}
 });
 
