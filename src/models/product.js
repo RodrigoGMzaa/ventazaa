@@ -10,7 +10,7 @@ const productoSchema = new Schema({
     unidades:{type: String},
     costo:{type: Number},
     precio: {type: Number},
-    cantidad: {type: Number},
+    cantidad_pro: {type: Number},
     mayoreo:{type: Number},
     filename: {type: String},
     path: {type: String},

@@ -30,7 +30,7 @@ const filtrar = () =>{
             <td>${moleszaachil.unidades}</td>
             <td>${moleszaachil.descripcion}</td>
             <td>${moleszaachil.costo }</td>
-            <td>${moleszaachil.cantidad }</td>
+            <td>${moleszaachil.cantidad_pro }</td>
             <td>${moleszaachil.precio }</td>
             <td>${moleszaachil.mayoreo}</td>
             
