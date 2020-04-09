@@ -53,8 +53,8 @@ $('#tiket').click(function () {
 
 
 
-    var categoriaCapturar = document.getElementById("producto").value;
-    var idCapturar = document.getElementById("precio").value;
+    var nombreCapturar = document.getElementById("producto").value;
+    var precioCapturar = document.getElementById("precio").value;
     var cantidadCapturar = document.getElementById("cantidad").value;
     
     if(cantidadCapturar == ""){ 
@@ -83,6 +83,7 @@ $('#tiket').click(function () {
   
   function agregar(){
     tiketDatos.push(nuevoTiket);
+    subtotal = nuevoTiket.precio * nuevoTiket.cantidad
     document.getElementById("venta_detalle").innerHTML +='<td>'+nuevoTiket.nombre+'</td><td>'+nuevoTiket.precio+'</td><td>'+nuevoTiket.cantidad+'</td>'+'</td><td>'+nuevoTiket.subtotal+'</td>'
   }
   
