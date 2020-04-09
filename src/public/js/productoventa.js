@@ -67,12 +67,13 @@ $('#tiket').click(function () {
     nuevoTiket = new tiket(nombreCapturar, precioCapturar, cantidadCapturar);
       console.log(nuevoTiket);
       agregar();
-      return false;
+      
           
                                                                   
    
       
     $('input[type="text"]').val('');
+    return false;
   });
 
   var tiketDatos =[];

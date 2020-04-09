@@ -46,6 +46,12 @@ const filtrar = () =>{
         .catch(err =>{
             console.error(err);
         });
+
+        
+    });
+
+    $('#tiket').click(function () {
+        return false;
     });
     
     function newFunction(moleszaachil) {
