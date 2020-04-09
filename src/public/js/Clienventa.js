@@ -23,13 +23,14 @@ const filtrar = () =>{
             
             document.getElementById("inputCliente").value=moleszaachil.nombre;
             document.getElementById("inputCliente2").value=moleszaachil.telefono;
-              
+            return false;
           }
         }
         if(resultado.innerHTML == ''){
             resultado.innerHTML +=`
             <p> Categoria no encontrado</p>
             `
+            return false;
         }
         return false;
     }
@@ -49,4 +50,5 @@ const filtrar = () =>{
     
     function newFunction(moleszaachil) {
         return moleszaachil.nombre.toLowerCase();
+        return false;
     }
