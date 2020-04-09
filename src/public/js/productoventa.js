@@ -65,7 +65,7 @@ $('#tiket').click(function () {
 
   
     nuevoTiket = new tiket(nombreCapturar, precioCapturar, cantidadCapturar);
-      console.log(nuevoTiket);
+      
       agregar();
       
           
@@ -79,13 +79,31 @@ $('#tiket').click(function () {
   var tiketDatos =[];
   
    subtotal = 0; 
-
+   productob = moleszaachil.nombre;
   
   //funcion agregar 
   function agregar(){
-    tiketDatos.push(nuevoTiket);
-    subtotal = nuevoTiket.precio * nuevoTiket.cantidad
-    document.getElementById("venta_detalle").innerHTML +='<td>'+nuevoTiket.nombre+'</td><td>'+nuevoTiket.precio+'</td><td>'+nuevoTiket.cantidad+'</td>'+'</td><td>'+subtotal+'</td><td><btn value="Eliminar" title="Eliminar" class="btn btn-danger btn-delete"><i class="fas fa-trash"></i></td>'
+
+
+    const texto = productob.value.toLowerCase();
+
+    for(let nuevoTiket of tiketDatos){
+      let productos = newFunction(nuevoTiket);
+      if(productos.indexOf(texto) !== -1){
+            
+        console.log(nuevoTiket.nombre); 
+        console.log(nuevoTiket.cantidad);
+        console.log(cantidadCapturar);
+
+              
+        
+        }else{
+          tiketDatos.push(nuevoTiket);
+          subtotal = nuevoTiket.precio * nuevoTiket.cantidad
+          document.getElementById("venta_detalle").innerHTML +='<td>'+nuevoTiket.nombre+'</td><td>'+nuevoTiket.precio+'</td><td>'+nuevoTiket.cantidad+'</td>'+'</td><td>'+subtotal+'</td><td><btn value="Eliminar" title="Eliminar" class="btn btn-danger btn-delete"><i class="fas fa-trash"></i></td>'
+        }
+
+    
    
   }
   
@@ -114,3 +132,4 @@ function newFunction(moleszaachil) {
   return moleszaachil.nombre.toLowerCase();
 }
 
+ 
