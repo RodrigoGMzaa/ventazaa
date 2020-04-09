@@ -27,9 +27,7 @@ window.addEventListener('DOMContentLoaded', e =>{
             }
           }
           if(resultado.innerHTML == ''){
-              resultado.innerHTML +=`
-              <p> Categoria no encontrado</p>
-              `
+             
               return false;
           }
           return false;
@@ -50,9 +48,7 @@ window.addEventListener('DOMContentLoaded', e =>{
           
       });
   
-      $('#tiket').click(function () {
-          return false;
-      });
+      
       
       function newFunction(moleszaachil) {
           return moleszaachil.nombre.toLowerCase();
