@@ -6,9 +6,9 @@ window.addEventListener('DOMContentLoaded', e =>{
             const moleszaachila = data.data;
             
 
-const formulario = document.querySelector('#formulario');
-const boton = document.querySelector('#boton');
-const resultado = document.querySelector('#resultado'); 
+const formulario = document.querySelector('#busquedaAlmacen');
+const boton = document.querySelector('#botonAlmacen');
+const resultado = document.querySelector('#inputAlmacen'); 
 
 const filtrar = () =>{
     //console.log(formulario.value);
@@ -20,16 +20,10 @@ const filtrar = () =>{
     for(let moleszaachil of moleszaachila){
         let almacenes = newFunction(moleszaachil);
         if(almacenes.indexOf(texto) !== -1){
-            resultado.innerHTML += `
-            <div class="moleszaachil" id="moleszaachil._id">
-            <td>${moleszaachil.nombre }</td>
-            <td>${moleszaachil.stock}</td>
-            
-            
-            <td> <a  href="/almacen/delet/${moleszaachil._id}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a> </td>
-            <td> <a  href="/almacen/edit/${moleszaachil._id}" class="btn btn-success"><i class="fas fa-pen"></i></a> </td>
-            </div> 
-            `
+
+            document.getElementById("inputAlmacen").value=moleszaachil.nombre;
+            document.getElementById("inputAlmacen2").value=moleszaachil.telefono;
+            return false;
         }
     }
     if(resultado.innerHTML == ''){
