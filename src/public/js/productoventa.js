@@ -84,7 +84,6 @@ $('#tiket').click(function () {
   //funcion agregar 
   function agregar(){
 
-
     const texto = productob.value.toLowerCase();
 
     for(let nuevoTiket of tiketDatos){
@@ -102,7 +101,8 @@ $('#tiket').click(function () {
           subtotal = nuevoTiket.precio * nuevoTiket.cantidad
           document.getElementById("venta_detalle").innerHTML +='<td>'+nuevoTiket.nombre+'</td><td>'+nuevoTiket.precio+'</td><td>'+nuevoTiket.cantidad+'</td>'+'</td><td>'+subtotal+'</td><td><btn value="Eliminar" title="Eliminar" class="btn btn-danger btn-delete"><i class="fas fa-trash"></i></td>'
         }
-
+    
+      }
     
    
   }
