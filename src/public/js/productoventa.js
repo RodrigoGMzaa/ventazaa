@@ -89,7 +89,7 @@ $('#tiket').click(function () {
    
   }
   
-
+ 
 
 boton.addEventListener('click', filtrar);
 //para filtrar sin precionar buscar 
@@ -104,16 +104,7 @@ formulario.addEventListener('keyup',filtrar);
     });
 
     //evento eliminar
-    $(document).ready(function() {
-      $("#boton01").click(function(event) {
-        console.log("eliminar");
-      });
-      $("#boton02").click(function(event) {
-        $("#boton02").empty();
-      });
-      $("#boton03").click(function(event) {
-        $(".boton03").empty();
-      });
+   
 
 $(document).on('click', 'btn-delete', function(e){
   e.preventDefault();
