@@ -7,4 +7,4 @@ const almacenSchema = new Schema({
     date: {type: Date, default: Date.now()}
 });
 
-module.exports = mongoose.model('almacen', productoSchema)
+module.exports = mongoose.model('almacen', almacenSchema)
