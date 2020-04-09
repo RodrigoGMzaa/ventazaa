@@ -26,10 +26,11 @@ const filtrar = () =>{
             <td><img src="${moleszaachil.path}" style="width:50px; height:50px;"></td>
             <td>${moleszaachil.nombre }</td>
             <td>${moleszaachil.departamento}</td>
-            <td>${moleszaachil.stock}</td>
+            <td>${moleszaachil.idalmacen}</td>
             <td>${moleszaachil.unidades}</td>
             <td>${moleszaachil.descripcion}</td>
             <td>${moleszaachil.costo }</td>
+            <td>${moleszaachil.cantidad }</td>
             <td>${moleszaachil.precio }</td>
             <td>${moleszaachil.mayoreo}</td>
             

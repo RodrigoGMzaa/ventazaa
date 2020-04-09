@@ -39,10 +39,11 @@ productct.createProducts = async (req, res) => {
     newproduct.codigo = req.body.codigo;
     newproduct.nombre = req.body.nombre;
     newproduct.departamento = req.body.departamento;
-    newproduct.stock = req.body.stock,
-    newproduct.unidades = req.body.unidades,
+    newproduct.idalmacen = req.body.idalmacen;
+    newproduct.unidades = req.body.unidades;
     newproduct.descripcion = req.body.descripcion;
     newproduct.costo = req.body.costo;
+    newproduct.cantidad = req.body.cantidad;
     newproduct.precio = req.body.precio;
     newproduct.mayoreo = req.body.mayoreo;
     newproduct.filname = req.file.filename;

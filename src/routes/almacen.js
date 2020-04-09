@@ -12,7 +12,7 @@ router.get('/busqueda', almacenct.buscarAlmacenes);
 
 router.get('/mostrar', almacenct.almacenes);
 
-router.post('/mostrar',almacenct.createAlmacenes);
+router.post('/almacen',almacenct.createAlmacenes);
 
 router.get('/edit/:id', almacenct.getAlmacen);
 
