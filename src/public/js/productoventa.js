@@ -78,7 +78,7 @@ $('#tiket').click(function () {
 
   var tiketDatos =[];
   
-   total1 = ''; 
+   total1 = 0; 
 
   
   //funcion agregar 
@@ -109,7 +109,8 @@ $('#tiket').click(function () {
     document.getElementById("venta_detalle").innerHTML +='<td>'+nuevoTiket.nombre+'</td><td>'+nuevoTiket.precio+'</td><td>'+nuevoTiket.cantidad+'</td>'+'</td><td>'+subtotal+'</td><td><btn id="boton01" value="Eliminar" title="Eliminar" class="btn btn-danger btn-delete"><i class="fas fa-trash"></i></td>'
     }
     //suma de datos
-    
+    let celdadSubtotal = document.querySelectorAll('td'+'td'+'td'+'td');
+    console.log(celdadSubtotal);
 
     //eliminar datos del array
     $('.btn-delete').click( function(e){
