@@ -78,7 +78,7 @@ $('#tiket').click(function () {
 
   var tiketDatos =[];
   
-   total1 = 0; 
+   total = 0; 
 
   
   //funcion agregar 
