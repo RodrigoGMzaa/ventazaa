@@ -91,7 +91,7 @@ $('#tiket').click(function () {
 
     if (existe != -1 ) {
      
-      console.log("existe");
+      alert("El producto ya sido agregado");
 
     }else{
       tiketDatos.push({
