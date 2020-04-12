@@ -28,6 +28,7 @@ const filtrar = () =>{
             
             <td> <a  href="/almacen/delet/${moleszaachil.nombre}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a> </td>
             <td> <a  href="/almacen/edit/${moleszaachil.stock}" class="btn btn-success"><i class="fas fa-pen"></i></a> </td>
+            <td> <a  href="/almacen/edit/${moleszaachil.costo}" class="btn btn-success"><i class="fas fa-pen"></i></a> </td>
             </div> 
             `
         }
