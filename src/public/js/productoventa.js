@@ -107,7 +107,11 @@ $('#tiket').click(function () {
 
     
     document.getElementById("venta_detalle").innerHTML +='<td>'+nuevoTiket.nombre+'</td><td>'+nuevoTiket.precio+'</td><td>'+nuevoTiket.cantidad+'</td>'+'</td><td>'+subtotal+'</td><td><btn id="boton01" value="Eliminar" title="Eliminar" class="btn btn-danger btn-delete"><i class="fas fa-trash"></i></td>'
-    }
+    
+    total += Number(nuevoTiket.cantidad * nuevo.tiketprecio);
+    console.log(total);
+  
+  }
     //suma de datos
     
 
@@ -119,9 +123,7 @@ $('#tiket').click(function () {
     });
   }
   
-  let celdadSubtotal = document.querySelectorAll('td'+'td'+'td'+'td');
-    console.log(celdadSubtotal);
- 
+  
 
 boton.addEventListener('click', filtrar);
 //para filtrar sin precionar buscar 
