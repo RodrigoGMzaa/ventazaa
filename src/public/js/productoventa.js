@@ -53,9 +53,9 @@ $('#tiket').click(function () {
 
 
 
-    var nombreCapturar = document.getElementById("producto").value;
-    var precioCapturar = document.getElementById("precio").value;
-    var cantidadCapturar = document.getElementById("cantidad").value;
+     nombreCapturar = document.getElementById("producto").value;
+     precioCapturar = document.getElementById("precio").value;
+     cantidadCapturar = document.getElementById("cantidad").value;
     
     if(cantidadCapturar == ""){ 
         cantidadCapturar = 1
@@ -84,7 +84,7 @@ $('#tiket').click(function () {
   //funcion agregar 
   function agregar(){
 
-    const data = nombreCapturar;
+    const data = nombreCapturar.split('-');
     console.log(data);
 
     const existe = tiketDatos.findIndex(e => e.nombre == data[0]);
