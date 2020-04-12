@@ -106,12 +106,12 @@ $('#tiket').click(function () {
     subtotal = nuevoTiket.precio * nuevoTiket.cantidad
 
     
-    document.getElementById("venta_detalle").innerHTML +='<td>'+nuevoTiket.nombre+'</td><td>'+nuevoTiket.precio+'</td><td>'+nuevoTiket.cantidad+'</td>'+'</td><td class="dato">'+subtotal+'</td><td><btn id="boton01" value="Eliminar" title="Eliminar" class="btn btn-danger btn-delete"><i class="fas fa-trash"></i></td>'
+    document.getElementById("venta_detalle").innerHTML +='<td>'+nuevoTiket.nombre+'</td><td>'+nuevoTiket.precio+'</td><td>'+nuevoTiket.cantidad+'</td>'+'</td><tr class="dato"><td>'+subtotal+'</td></tr><td><btn id="boton01" value="Eliminar" title="Eliminar" class="btn btn-danger btn-delete"><i class="fas fa-trash"></i></td>'
     }
     //suma de datos
     var suma = 0;
-    $('#tabla tb.dato').each(function(){ //filas con clase 'dato', especifica una clase, asi no tomas el nombre de las columnas
-    suma += parseInt($(this).find('td').eq(2).text()||0,10) //numero de la celda 3
+    $('#tabla tr.dato').each(function(){ //filas con clase 'dato', especifica una clase, asi no tomas el nombre de las columnas
+    suma += parseInt($(this).find('td').eq(3).text()||0,10) //numero de la celda 3
      })
     console.log(suma)
 
