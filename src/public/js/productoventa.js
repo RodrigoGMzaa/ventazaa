@@ -83,12 +83,30 @@ $('#tiket').click(function () {
   
   //funcion agregar 
   function agregar(){
+
+    const data = nombreCapturar.split('-');
+
+    const existe = tiketDatos.findIndex(e => e.nombre == data[0]);
+
+    if (existe != -1 ) {
+     
+      console.log("existe");
+
+    }else{
+      tiketDatos.push({
+        nombre: data[0],
+        id: data[2],
+        precio: nuevoTiket.precio,
+        cantidad: nuevoTiket.cantidad
+        
+      });
+
     tiketDatos.push(nuevoTiket);
     subtotal = nuevoTiket.precio * nuevoTiket.cantidad
 
     
     document.getElementById("venta_detalle").innerHTML +='<td>'+nuevoTiket.nombre+'</td><td>'+nuevoTiket.precio+'</td><td>'+nuevoTiket.cantidad+'</td>'+'</td><td>'+subtotal+'</td><td><btn id="boton01" value="Eliminar" title="Eliminar" class="btn btn-danger btn-delete"><i class="fas fa-trash"></i></td>'
-    
+    }
     //suma de datos
     
 
