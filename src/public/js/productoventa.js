@@ -91,11 +91,8 @@ $('#tiket').click(function () {
 
     if (existe != -1 ) {
 
-      <div class="alert alert-danger" role="alert">
-    El producto ya ha sido agregado
-      </div>
-     
-      //alert("El producto ya ha sido agregado");
+    
+      alert("El producto ya ha sido agregado");
 
     }else{
       tiketDatos.push({
