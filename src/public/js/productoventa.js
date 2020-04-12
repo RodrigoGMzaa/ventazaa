@@ -85,6 +85,7 @@ $('#tiket').click(function () {
   function agregar(){
 
     const data = nombreCapturar.split('-');
+    console.log(data);
 
     const existe = tiketDatos.findIndex(e => e.nombre == data[0]);
 
