@@ -42,7 +42,6 @@ productct.createProducts = async (req, res) => {
     newproduct.idalmacen = req.body.idalmacen;
     newproduct.unidades = req.body.unidades;
     newproduct.descripcion = req.body.descripcion;
-    newproduct.costo = req.body.costo;
     newproduct.cantidad_pro = req.body.cantidad_pro;
     newproduct.precio = req.body.precio;
     newproduct.mayoreo = req.body.mayoreo;

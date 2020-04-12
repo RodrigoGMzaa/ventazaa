@@ -34,6 +34,7 @@ almacenct.createAlmacenes = async (req, res) => {
     const newalmacen = new almacen();
     newalmacen.nombre = req.body.nombre;
     newalmacen.stock = req.body.stock;
+    newalmacen.costo = req.body.costo;
  
     await newalmacen.save();
   

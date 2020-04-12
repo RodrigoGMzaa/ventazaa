@@ -90,8 +90,6 @@ $('#tiket').click(function () {
     const existe = tiketDatos.findIndex(e => e.nombre == data[0]);
 
     if (existe != -1 ) {
-
-      
      
       alert("El producto ya ha sido agregado");
 

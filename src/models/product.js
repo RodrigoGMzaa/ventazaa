@@ -8,7 +8,6 @@ const productoSchema = new Schema({
     departamento: {type: String},
     idalamcen: {type: String},
     unidades:{type: String},
-    costo:{type: Number},
     precio: {type: Number},
     cantidad_pro: {type: Number},
     mayoreo:{type: Number},
