@@ -96,7 +96,6 @@ $('#tiket').click(function () {
       e.preventDefault();
       var row = $(this).parent().parent()[0];
       $(row).remove();
-      console.log(row);
     });
   }
   
