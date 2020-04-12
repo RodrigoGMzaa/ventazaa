@@ -111,7 +111,7 @@ $('#tiket').click(function () {
     //suma de datos
     var suma = 0;
     $('#tabla tr.dato').each(function(){ //filas con clase 'dato', especifica una clase, asi no tomas el nombre de las columnas
-    suma += parseInt($(this).find('td').eq(3).text()||0,10) //numero de la celda 3
+    suma += parseInt($(this).find('td').eq(5).text()||0,10) //numero de la celda 3
      })
     console.log(suma)
 
