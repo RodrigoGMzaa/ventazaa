@@ -112,31 +112,24 @@ $('#tiket').click(function () {
     document.getElementById("venta_detalle").innerHTML +='<td>'+nuevoTiket.nombre+'</td><td>'+nuevoTiket.precio+'</td><td>'+nuevoTiket.cantidad+'</td>'+'</td><td>'+subtotal+'</td><td><btn id="boton01" value="Eliminar" title="Eliminar" class="btn btn-danger btn-delete"><i class="fas fa-trash"></i></td>'
     
     function sumartotal(){
-
-      for(var i = 0; i < tiketDatos.length; i++ ){
-        total += Number(nuevoTiket.cantidad[i] * nuevoTiket.precio);
+      total += Number(nuevoTiket.cantidad * nuevoTiket.precio);
       console.log(total);
      
       document.getElementById("total").value= total;
-      }
-      
     
     } 
    
 
   }
-    //eliminar
-    function removeItemFromArr ( arr, item ) {
-      var i = arr.indexOf( item );
-      arr.splice( i, 1 );
-  }
+    //suma de datos
+    
 
     //eliminar datos del array
     $('.btn-delete').click( function(e){
-      //e.preventDefault();
-      //var row = $(this).parent().parent()[0];
-      removeItemFromArr( tiketDatos, 'huevo' );
-      console.log(tiketDatos);
+      e.preventDefault();
+      var row = $(this).parent().parent()[0];
+      $(row).remove();
+      console.log(row);
       
     });
 
