@@ -115,11 +115,10 @@ $('#tiket').click(function () {
       total += Number(nuevoTiket.cantidad * nuevoTiket.precio);
       console.log(total);
      
-      
       document.getElementById("total").value= total;
     
     } 
-    sumartotal();
+   sumartotal();
 
   }
     //suma de datos
@@ -133,9 +132,8 @@ $('#tiket').click(function () {
       console.log(row);
       
     });
-    
   }
-  sumartotal();
+  
   
 
 boton.addEventListener('click', filtrar);
