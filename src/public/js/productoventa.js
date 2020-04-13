@@ -118,7 +118,7 @@ $('#tiket').click(function () {
       document.getElementById("total").value= total;
     
     } 
-   sumartotal();
+   
 
   }
     //suma de datos
@@ -132,6 +132,8 @@ $('#tiket').click(function () {
       console.log(row);
       
     });
+
+    sumartotal();
   }
   
   
