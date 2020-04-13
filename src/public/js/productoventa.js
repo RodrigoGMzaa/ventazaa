@@ -132,9 +132,9 @@ $('#tiket').click(function () {
       console.log(row);
       
     });
-    sumartotal();
+    
   }
-  
+  sumartotal();
   
 
 boton.addEventListener('click', filtrar);
