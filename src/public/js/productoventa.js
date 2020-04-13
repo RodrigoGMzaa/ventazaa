@@ -114,7 +114,7 @@ $('#tiket').click(function () {
     function sumartotal(){
 
       for(var i = 0; i < tiketDatos.length; i++ ){
-        total += Number(nuevoTiket[i].cantidad * nuevoTiket.precio);
+        total += Number(nuevoTiket.cantidad[i] * nuevoTiket.precio);
       console.log(total);
      
       document.getElementById("total").value= total;
@@ -133,8 +133,8 @@ $('#tiket').click(function () {
 
     //eliminar datos del array
     $('.btn-delete').click( function(e){
-      e.preventDefault();
-      var row = $(this).parent().parent()[0];
+      //e.preventDefault();
+      //var row = $(this).parent().parent()[0];
       removeItemFromArr( tiketDatos, 'huevo' );
       console.log(tiketDatos);
       
