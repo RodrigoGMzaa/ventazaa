@@ -9,7 +9,16 @@ router.get('/ventas', function(req, res) {
   });
 router.post("/venta", async (req, res) => {
   try{
-    const Ventas = await VentaController.create({...req.body});
+
+    const {valor_total, cliente, producto, cantidad} = req.body;
+
+    const Ventas = await VentaController.create({...req.body, description});
+
+    producto.map(producto =>{
+      const productos = new producto({...producto, productos: Productos._id});
+      
+      productos.save()
+    });
 
     return res.send({Ventas});
   }catch (err){
