@@ -112,9 +112,14 @@ $('#tiket').click(function () {
     document.getElementById("venta_detalle").innerHTML +='<td>'+nuevoTiket.nombre+'</td><td>'+nuevoTiket.precio+'</td><td>'+nuevoTiket.cantidad+'</td>'+'</td><td>'+subtotal+'</td><td><btn id="boton01" value="Eliminar" title="Eliminar" class="btn btn-danger btn-delete"><i class="fas fa-trash"></i></td>'
     
     function sumartotal(){
-      total += Number(nuevoTiket.cantidad * nuevoTiket.precio);
+
+      for(var i = 0; i < tiketDatos.length; i++ ){
+        total += Number(nuevoTiket[i].cantidad * nuevoTiket.precio);
       console.log(total);
      
+      
+      }
+      
       document.getElementById("total").value= total;
     
     } 
