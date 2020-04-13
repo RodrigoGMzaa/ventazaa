@@ -115,7 +115,7 @@ $('#tiket').click(function () {
       total += Number(nuevoTiket.cantidad * nuevoTiket.precio);
       console.log(total);
      
-      document.getElementById("total").value= total;
+      document.getElementById("valor_total").value= total;
     
     } 
    
