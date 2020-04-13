@@ -68,7 +68,7 @@ $('#tiket').click(function () {
       console.log(nuevoTiket);
       agregar();
       
-      document.getElementById("total").value =moleszaachil.nombre;
+      document.getElementById("total").value= precioCapturar;
                                                                   
    
       
