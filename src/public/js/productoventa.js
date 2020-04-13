@@ -108,9 +108,9 @@ $('#tiket').click(function () {
     
     document.getElementById("venta_detalle").innerHTML +='<td>'+nuevoTiket.nombre+'</td><td>'+nuevoTiket.precio+'</td><td>'+nuevoTiket.cantidad+'</td>'+'</td><td>'+subtotal+'</td><td><btn id="boton01" value="Eliminar" title="Eliminar" class="btn btn-danger btn-delete"><i class="fas fa-trash"></i></td>'
     
-    nuevoTiket.total += Number(nuevoTiket.cantidad * nuevoTiket.precio);
-    console.log(nuevoTiket.total);
-    document.getElementById("total").value=nuevoTiket.total;
+    total += Number(nuevoTiket.cantidad * nuevoTiket.precio);
+    console.log(total);
+    document.getElementById("total").total;
   
   }
     //suma de datos
