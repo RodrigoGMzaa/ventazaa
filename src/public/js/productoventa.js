@@ -127,7 +127,7 @@ $('#tiket').click(function () {
 
   }
     //suma de datos
-    
+    console.log(tiketDatos);
 
     //eliminar datos del array
     $('.btn-delete').click( function(e){
