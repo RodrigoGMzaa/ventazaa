@@ -117,17 +117,16 @@ $('#tiket').click(function () {
         total += Number(nuevoTiket[i].cantidad * nuevoTiket.precio);
       console.log(total);
      
-      
+      document.getElementById("total").value= total;
       }
       
-      document.getElementById("total").value= total;
     
     } 
    
 
   }
     //suma de datos
-    console.log(tiketDatos);
+    
 
     //eliminar datos del array
     $('.btn-delete').click( function(e){
@@ -135,6 +134,7 @@ $('#tiket').click(function () {
       var row = $(this).parent().parent()[0];
       $(row).remove();
       console.log(row);
+      console.log(tiketDatos);
       
     });
 
