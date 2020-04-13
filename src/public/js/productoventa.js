@@ -135,7 +135,7 @@ $('#tiket').click(function () {
     $('.btn-delete').click( function(e){
       e.preventDefault();
       var row = $(this).parent().parent()[0];
-      removeItemFromArr( tiketDatos, row );
+      removeItemFromArr( tiketDatos, 'huevo' );
       console.log(tiketDatos);
       
     });
