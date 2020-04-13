@@ -128,7 +128,8 @@ $('#tiket').click(function () {
       e.preventDefault();
       var row = $(this).parent().parent()[0];
       $(row).remove();
-      sumartotal();
+      total = total - row._id;
+      document.getElementById("total").value= total;
     });
   }
   
