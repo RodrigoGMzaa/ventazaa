@@ -125,15 +125,17 @@ $('#tiket').click(function () {
    
 
   }
-    //suma de datos
-    
+    //eliminar
+    function removeItemFromArr ( arr, item ) {
+      var i = arr.indexOf( item );
+      arr.splice( i, 1 );
+  }
 
     //eliminar datos del array
     $('.btn-delete').click( function(e){
       e.preventDefault();
       var row = $(this).parent().parent()[0];
-      $(row).remove();
-      console.log(row);
+      removeItemFromArr( tiketDatos, row );
       console.log(tiketDatos);
       
     });
