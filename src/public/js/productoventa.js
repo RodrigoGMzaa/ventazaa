@@ -68,11 +68,14 @@ $('#tiket').click(function () {
       console.log(nuevoTiket);
       agregar();
       
-      document.getElementById("total").value= precioCapturar;
+      
                                                                   
    
       
-    $('input[type="text"]').val('');
+      $("#producto").val("")
+      $("#precio").val("")
+      $("#cantidad").val("")
+      $("#busquedaproducto").val("")
     return false;
   });
 
@@ -111,7 +114,7 @@ $('#tiket').click(function () {
     total += Number(nuevoTiket.cantidad * nuevoTiket.precio);
     console.log(total);
    
-    
+    document.getElementById("total").value= total;
   
   }
     //suma de datos
