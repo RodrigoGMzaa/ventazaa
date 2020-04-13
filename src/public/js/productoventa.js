@@ -68,7 +68,7 @@ $('#tiket').click(function () {
       console.log(nuevoTiket);
       agregar();
       
-      
+      document.getElementById("total").value = total;
                                                                   
    
       
@@ -115,7 +115,7 @@ $('#tiket').click(function () {
   
   }
     //suma de datos
-    document.getElementById("total").value = total;
+    
 
     //eliminar datos del array
     $('.btn-delete').click( function(e){
