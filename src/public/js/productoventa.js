@@ -68,7 +68,7 @@ $('#tiket').click(function () {
       console.log(nuevoTiket);
       agregar();
       
-          
+      
                                                                   
    
       
@@ -110,7 +110,8 @@ $('#tiket').click(function () {
     
     total += Number(nuevoTiket.cantidad * nuevoTiket.precio);
     console.log(total);
-    document.getElementById("total").value.total;
+   
+    document.getElementById("total").value=total ;
   
   }
     //suma de datos
