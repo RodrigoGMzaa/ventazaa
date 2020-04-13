@@ -2,8 +2,8 @@
 <%- include('./partials/navv') -%>
 
 <div class="container-fluid">
-   <form action="">
-    <div class="row">
+   <form action="/sales/venta" method="POST">
+    <div class="row"> 
        
         <!--divicoon de 2 card-->
         <div class="w-100"></div>
@@ -39,7 +39,7 @@
                         <div class="form-group">
                           <div class="row">
                               <div class="col-sm">
-                                  <input type="text" class="form-control" id="inputCliente" placeholder="Nombre">
+                                  <input type="text" name="cliente" class="form-control" id="inputCliente" placeholder="Nombre">
                               </div>
                               <div class="col-sm">
                                   <input type="text" class="form-control" id="inputCliente2" placeholder="Telefono">
@@ -133,7 +133,7 @@
                           <th></th>
                     </table>
                     
-                    <input type="number" class="form-control" id="total" placeholder="Precio">
+                    <input type="number" name="valor_total" class="form-control" id="total" placeholder="Precio">
                     <button class="btn btn-success float-right" (click)="guardar()">Cobrar</button>
                   </div>
               </div>
