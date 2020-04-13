@@ -14,11 +14,13 @@ router.post("/venta", async (req, res) => {
 
     const Ventas = await VentaController.create({...req.body, description});
 
-    producto.map(producto =>{
+    producto.map(async producto =>{
       const productos = new producto({...producto, productos: Productos._id});
       
-      productos.save()
+      productos.save().then(producto =>  productos.producto.push(producto));
     });
+
+    await producto.save();
 
     return res.send({Ventas});
   }catch (err){
