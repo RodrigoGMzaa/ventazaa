@@ -111,11 +111,11 @@ $('#tiket').click(function () {
     total += Number(nuevoTiket.cantidad * nuevoTiket.precio);
     console.log(total);
    
-    document.getElementById("total").value=total ;
+    
   
   }
     //suma de datos
-    
+    document.getElementById("total").value = total;
 
     //eliminar datos del array
     $('.btn-delete').click( function(e){
