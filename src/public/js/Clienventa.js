@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', e =>{
 
 const formulario = document.querySelector('#busquedacliente');
 const boton = document.querySelector('#botonCliente');
-const resultado = document.querySelector('#inputCliente');
+const resultado = document.querySelector('#cliente');
 
 const filtrar = () =>{
   //console.log(formulario.value);
@@ -21,7 +21,7 @@ const filtrar = () =>{
       let cliente = newFunction(moleszaachil);
       if(cliente.indexOf(texto) !== -1){
             
-            document.getElementById("inputCliente").value=moleszaachil.nombre;
+            document.getElementById("cliente").value=moleszaachil.nombre;
             document.getElementById("inputCliente2").value=moleszaachil.telefono;
             return false;
           }
