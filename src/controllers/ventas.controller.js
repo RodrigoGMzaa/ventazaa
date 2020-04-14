@@ -78,10 +78,13 @@ let validar_cantidad = async (productos, callback) => {
 }
 
 let listar = (req, res) => {
-    const venta =  Venta.find({})
-        
-            res.json(venta);
-    
+    Venta.find({},' ')
+    .then(doc =>{
+       res.json({response:'success', data:doc});
+    })
+    .catch(err =>{
+       console.log('error al cargar elementos', err.message);
+    });
 }
 
 module.exports = {
