@@ -10,9 +10,9 @@ router.get('/ventas', function(req, res) {
 
 router.post("/venta", async (req, res) => {
   const venta =new Venta({
-    valor_total: body.total,
+    valor_total: body.valor_total,
     cliente: body.cliente,
-    productos: respuesta
+    productos: productos
 });
     await venta.save();
     res.redirect('/ventas');
