@@ -77,10 +77,11 @@ let validar_cantidad = async (productos, callback) => {
         })
 }
 
-let listar = async (req, res) => {
-    const venta = await Ventas.find();
-   
-    res.json(venta);
+let listar = (req, res) => {
+    const venta =  Venta.find({})
+        
+            res.json(venta);
+    
 }
 
 module.exports = {

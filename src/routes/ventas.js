@@ -15,6 +15,6 @@ router.post("/venta", async (req, res) => {
 });
 
 
-router.get("/venta", VentaController.listar);
+router.get("/ventalis", VentaController.listar);
 
 module.exports = router;
