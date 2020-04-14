@@ -9,7 +9,11 @@ router.get('/ventas', function(req, res) {
   });
 
 router.post("/venta", async (req, res) => {
-  const venta =new Venta(req.body);
+  const venta =new Venta({
+    valor_total: body.total,
+    cliente: body.cliente,
+    productos: respuesta
+});
     await venta.save();
     res.redirect('/ventas');
 });
