@@ -18,6 +18,7 @@ let ventaSchema = new Schema({
             ref : "Producto"
         },
         cantidad : Number
+        
     }]
 });
 
